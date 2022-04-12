@@ -19,6 +19,7 @@ class CategoryDb implements CategoryDbFunctions {
   CategoryDb._internal();
   static CategoryDb instance = CategoryDb._internal();
   factory CategoryDb() {
+    
     return instance;
   }
 

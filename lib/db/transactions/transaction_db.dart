@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:hive_flutter/hive_flutter.dart';
 import '../../model/transaction/transaction_model.dart';
@@ -14,18 +16,20 @@ abstract class TransactionDbFunction {
 
 
 class TransactionDB implements TransactionDbFunction {
-  //setting the [TransactionDB] class Singleton
-  //The singleton pattern is a pattern used in object-oriented programming 
-  //which ensures that a class has only one instance and also provides 
-  //a global point of access to it. ... Thanks to factory constructors, 
-  //implementing the singleton pattern in Dart is not only possible, 
-  //but simple and flexible.
+  
+  /// setting the [TransactionDB] class Singleton
+  /// The singleton pattern is a pattern used in object-oriented programming 
+  /// which ensures that a class has only one instance and also provides 
+  /// a global point of access to it. ... Thanks to factory constructors, 
+  /// implementing the singleton pattern in Dart is not only possible, 
+  /// but simple and flexible.
   TransactionDB._internal();
   static TransactionDB instance = TransactionDB._internal();
   factory TransactionDB() {
-    //now we have to call all these function as instance 
-    //or its all work as deferend funciton and classes
-    //example [TransactionDB.instance.deleteTransaction]
+     log('mesaasage');
+    /// now we have to call all these function as instance 
+    /// or its all work as deferend funciton and classes
+    /// example [TransactionDB.instance.deleteTransaction]
     return instance;
   }
 
@@ -46,8 +50,10 @@ class TransactionDB implements TransactionDbFunction {
 
   //funciton to refresh the UI
   Future<void> refresh() async {
+    log('message');
     //when refresh getting all the transaction detail from database 
     final _list = await getAllTransactions();
+   
     //and sorting date for displaying the  value for display transaction as data based
     _list.sort((first, second) => second.date.compareTo(first.date));
     //clearing value from notifier, or else the data will be duplicate, cos it will show the data from db 

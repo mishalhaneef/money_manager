@@ -14,17 +14,13 @@ class MoneyManagerBottomNavigation extends StatelessWidget {
           backgroundColor: kMainTheme,
           selectedItemColor: kSecondTheme,
           unselectedItemColor: kLiteTheme,
-        currentIndex: updatedIndex,
+        currentIndex: 0,
         onTap: (newIndex){
           HomeScreen.selectedIndexNotifier.value = newIndex;
         },
         items: const [
           BottomNavigationBarItem(
             icon: Icon(Icons.home),
-            label: ''
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.pie_chart),
             label: ''
           ),
           BottomNavigationBarItem(
