@@ -1,0 +1,34 @@
+//here is the code of category UI section
+
+Padding(
+      padding: const EdgeInsets.all(6.0),
+      child: Container(
+        decoration: const BoxDecoration(
+            color: Color.fromARGB(255, 32, 33, 59),
+            borderRadius: BorderRadius.all(Radius.circular(20))),
+        child: Center(
+            child: ListView.separated(
+                itemBuilder: (ctx, index) {
+                  return ListTile(
+                    leading: Text(
+                      '${index+1}',
+                      style: const TextStyle(color: Color(0xFF9196C0)),
+                    ),
+                    title: const Text('Expenses',
+                        style: TextStyle(color: Colors.white)),
+                    subtitle: const Text('Income Tab',
+                        style: TextStyle(color: Colors.white)),
+                    trailing: const Icon(
+                      Icons.arrow_downward,
+                      color: Colors.red,
+                    ),
+                  );
+                },
+                separatorBuilder: (ctx, index) {
+                  return const SizedBox(
+                    height: 10,
+                  );
+                },
+                itemCount: 4)),
+      ),
+    );

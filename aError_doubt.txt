@@ -1,0 +1,6 @@
+implementation 'com.google.android.material:material:<version>'
+
+  app lvl build gradle
+
+
+  key prop  [jks] name
