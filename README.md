@@ -11,7 +11,7 @@ features :
    - can create category
    - can add transaction
 
-Technolagies used :
+Tech Stack:
 - Dart 
 - Hive
 - Animations Packages
